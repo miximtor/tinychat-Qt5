@@ -55,8 +55,8 @@ PROTOBUF_GENERATE_CPP(TCQT5_RPC_PROTO_SRC TCQT5_RPC_PROTO_HDR ${PROJECT_SOURCE_D
 set_property(SOURCE  ${TCQT5_RPC_PROTO_SRC} ${TCQT5_RPC_PROTO_HDR} PROPERTY SKIP_AUTOGEN ON)
 
 file(GLOB UI_FILES ${PROJECT_SOURCE_DIR}/ui/*.ui)
-file(GLOB UI_CLASS_HDR ${PROJECT_SOURCE_DIR}/include/tc-qt5/ui/*.hpp)
-file(GLOB NET_CLASS_HDR ${PROJECT_SOURCE_DIR}/include/tc-qt5/net/*.hpp)
+file(GLOB UI_CLASS_HDR ${PROJECT_SOURCE_DIR}/include/tinychat/ui/*.hpp)
+file(GLOB NET_CLASS_HDR ${PROJECT_SOURCE_DIR}/include/tinychat/net/*.hpp)
 file(GLOB UI_CLASS_SRC ${PROJECT_SOURCE_DIR}/src/ui/*.cpp)
 file(GLOB NET_CLASS_SRC ${PROJECT_SOURCE_DIR}/src/net/*.cpp)
 
@@ -86,5 +86,5 @@ if (WIN32)
     target_link_libraries(tinychat-qt5 ws2_32 wsock32)
 endif ()
 target_link_libraries(tinychat-qt5 Threads::Threads)
-
+target_link_libraries(tinychat-qt5 baseproto)
 
